@@ -46,6 +46,22 @@
 </div>
 
 <div class="container">
+
+    <h2 class="text-center">Navegue pelos Assuntos abaixo</h2>
+</div>
+
+<div class="promo-livro">
+    <div class="container">
+        <div class="col-md-5 col-md-offset-1">
+            asd
+        </div>
+
+        <div class="col-md-5 col-md-offset-1">
+            sadsd
+        </div>
+    </div>
+</div>
+<div class="container">
     <div class="row dmbs-content ">
 
 
