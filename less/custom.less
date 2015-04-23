@@ -26,12 +26,59 @@ body {
 
 
 }
+
+#promo-livro {
+  background:#e6e6e6 ;
+  border: 1px solid #cacaca;
+  padding: 20px;
+
+  h3 {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 19px ;
+    text-align: center;
+  }
+  img {
+    padding-bottom: 30px;
+  }
+  p {
+    text-align: center;
+  }
+  button {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .btn, .btn-group {
+    width: 100%;
+  }
+}
+@media (min-width: @screen-sm-min) {
+  #promo-livro {
+    padding: 30px;
+    h3,p {
+      text-align: left;
+    }
+    img {
+      padding-bottom: 0px;
+    }
+
+    .btn, .btn-group {
+      width: auto;
+    }
+  }
+
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   #home-search {
     .dizeres{
         margin: 50px;
     }
+
+
+
     .search-home {
       margin-bottom: 60px ;
     }

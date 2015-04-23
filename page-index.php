@@ -14,7 +14,7 @@
     <div class="container">
 
         <div class="dizeres center-block ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet rutrum tortor.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet rutrum tortor.
             Quisque consectetur odio in tincidunt vestibulum. Fusce at ultricies ex.
         </div>
 
@@ -50,14 +50,28 @@
     <h2 class="text-center">Navegue pelos Assuntos abaixo</h2>
 </div>
 
-<div class="promo-livro">
+<div id="promo-livro">
     <div class="container">
-        <div class="col-md-5 col-md-offset-1">
-            asd
+        <div class="col-sm-5 col-sm-offset-1">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/foto-livro.png"
+                 class="img-responsive center-block "/>
         </div>
 
-        <div class="col-md-5 col-md-offset-1">
-            sadsd
+        <div class="col-sm-5 ">
+            <h3>
+                Coleção São José dos Campos
+                História e Cidade
+            </h3>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id pretium nibh. Sed eget nulla
+                venenatis, viverra augue a, volutpat justo. Phasellus feugiat dictum nibh in iaculis.
+            </p>
+
+
+            <button type="button" class="btn btn-success btn-lg">
+                Saiba mais
+            </button>
         </div>
     </div>
 </div>
