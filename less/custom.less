@@ -2,9 +2,13 @@ body {
 
   /* For the Footer Menu */
   padding-bottom: 51px;
+  background: #f3f3f3;
 
 }
 
+a {
+
+}
 .clear {
   clear: both;
 }
@@ -26,6 +30,82 @@ body {
 
 
 }
+
+
+#assuntos-home {
+
+  h2 {
+    margin: 20px;
+    font-size: 20px;
+    color: @gray-darker;
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      a {
+        font-size:14px;
+        font-weight: bold;
+
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  #assuntos-home {
+    margin-bottom: 30px;
+    margin-top: 15px;
+    ul {
+
+      li {
+
+        padding-bottom: 15px;
+        a {
+          font-size:16px;
+
+        }
+      }
+    }
+  }
+}
+
+/*******************************/
+#feed-home {
+  margin-top:15px;
+  h2 {
+    margin: 20px 0 20px 0;
+    font-size: 20px;
+    color: @gray-darker;
+    font-weight: bold;
+  }
+  .item-feed {
+    margin-bottom: 30px;
+  }
+  .data {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    color: @gray-darker;
+    font-weight: bold;
+    font-size: @font-size-base;
+    margin:0;
+    padding:0;
+    padding: 5px 0 5px 0;
+
+  }
+  p {
+    color: @gray;
+  }
+}
+
+/********************************/
 
 #promo-livro {
   background:#e6e6e6 ;

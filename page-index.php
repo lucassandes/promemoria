@@ -45,9 +45,32 @@
 
 </div>
 
-<div class="container">
+<div id="assuntos-home" class="container ">
 
     <h2 class="text-center">Navegue pelos Assuntos abaixo</h2>
+
+    <div class="col-md-4   text-center">
+
+        <ul>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+        </ul>
+    </div>
+    <div class="col-md-4  text-center">
+        <ul>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+        </ul>
+    </div>
+    <div class="col-md-4   text-center">
+        <ul>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+            <li><a href="#">Linhas de Pesquisa</a></li>
+        </ul>
+    </div>
 </div>
 
 <div id="promo-livro">
@@ -75,92 +98,49 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row dmbs-content ">
 
 
-        <div class="col-md-12 dmbs-main">
 
-            <?php
+<div class="clear"></div>
+<div id="feed-home" class="container">
+    <div class="col-md-5 col-md-offset-1 col-sm-6">
+        <h2>Notícias</h2>
+        <?php
+        $query = new WP_Query(array('category_name' => 'noticias', 'posts_per_page' => 2));
 
-            //if this was a search we display a page header with the results count. If there were no results we display the search form.
-            if (is_search()) :
+        while ($query->have_posts()) :
+            $query->the_post(); ?>
+            <div class="item-feed">
+                <div class="data"><?php the_time('j \d\e F \d\e Y'); ?></div>
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
+                <?php ?>
+            </div>
+        <?php endwhile; ?>
+        <!--<div class="item-feed">
+            <div class="data">12 de março de 2015</div>
+            <h3>Coleção São José dos Caampos Htistória e Cidade</h3>
 
-                $total_results = $wp_query->found_posts;
-
-                echo "<h2 class='page-header'>" . sprintf(__('%s Search Results for "%s"', 'devdmbootstrap3'), $total_results, get_search_query()) . "</h2>";
-
-                if ($total_results == 0) :
-                    get_search_form(true);
-                endif;
-
-            endif;
-
-            ?>
-
-            <?php // theloop
-            if (have_posts()) : while (have_posts()) : the_post();
-
-                // single post
-                if (is_single()) : ?>
-
-                    <div <?php post_class(); ?>>
-
-                        <h2 class="page-header"><?php the_title(); ?></h2>
-
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail(); ?>
-                            <div class="clear"></div>
-                        <?php endif; ?>
-                        <?php the_content(); ?>
-                        <?php wp_link_pages(); ?>
-                        <?php get_template_part('template-part', 'postmeta'); ?>
-                        <?php comments_template(); ?>
-
-                    </div>
-                <?php
-                // list of posts
-                else : ?>
-                    <div <?php post_class(); ?>>
-
-                        <h2 class="page-header">
-                            <a href="<?php the_permalink(); ?>"
-                               title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'devdmbootstrap3'), the_title_attribute('echo=0'))); ?>"
-                               rel="bookmark"><?php the_title(); ?></a>
-                        </h2>
-
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail(); ?>
-                            <div class="clear"></div>
-                        <?php endif; ?>
-                        <?php the_content(); ?>
-                        <?php wp_link_pages(); ?>
-                        <?php get_template_part('template-part', 'postmeta'); ?>
-                        <?php if (comments_open()) : ?>
-                            <div class="clear"></div>
-                            <p class="text-right">
-                                <a class="btn btn-success"
-                                   href="<?php the_permalink(); ?>#comments"><?php comments_number(__('Leave a Comment', 'devdmbootstrap3'), __('One Comment', 'devdmbootstrap3'), '%' . __(' Comments', 'devdmbootstrap3')); ?>
-                                    <span class="glyphicon glyphicon-comment"></span></a>
-                            </p>
-                        <?php endif; ?>
-                    </div>
-
-                <?php  endif; ?>
-
-            <?php endwhile; ?>
-                <?php posts_nav_link(); ?>
-            <?php else: ?>
-
-                <?php get_404_template(); ?>
-
-            <?php endif; ?>
-
-        </div>
-
-
+            <p>Está disponivel para download o primeiro volume da série - São José dos Campos História e Cidade. </p>
+        </div>-->
     </div>
-    <!-- end content container -->
+    <div class="col-md-5 col-md-offset-1 col-sm-6">
+        <h2>Atualizações</h2>
+
+        <?php
+        $query = new WP_Query(array('category_name' => 'atualizacoes', 'posts_per_page' =>2));
+        $i = 0;
+        while ($query->have_posts()) :
+            $query->the_post(); ?>
+            <div class="item-feed">
+                <div class="data"><?php the_time('j \d\e F \d\e Y'); ?></div>
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
+                <?php ?>
+            </div>
+        <?php endwhile; ?>
+    </div>
+</div>
 
     <?php get_footer(); ?>
 
