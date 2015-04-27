@@ -49,7 +49,10 @@
 
     <h2 class="text-center">Navegue pelos Assuntos abaixo</h2>
 
-    <div class="col-md-4   text-center">
+
+    <?php get_template_part('template-part', 'navassuntos'); ?>
+
+    <!--<div class="col-md-4   text-center">
 
         <ul>
             <li><a href="#">Linhas de Pesquisa</a></li>
@@ -70,7 +73,7 @@
             <li><a href="#">Linhas de Pesquisa</a></li>
             <li><a href="#">Linhas de Pesquisa</a></li>
         </ul>
-    </div>
+    </div>-->
 </div>
 
 <div id="promo-livro">
