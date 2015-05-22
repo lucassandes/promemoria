@@ -29,8 +29,9 @@
             endif;
 
         ?>
-
+        <h2 class="page-header"><?php single_cat_title(); ?></h2>
             <?php // theloop
+
                 if ( have_posts() ) : while ( have_posts() ) : the_post();
 
                     // single post
@@ -54,25 +55,26 @@
                     <?php
                     // list of posts
                     else : ?>
-                       <div <?php post_class(); ?>>
 
-                            <h2 class="page-header">
+                       <div <?php post_class('category-item'); ?>>
+
+                            <h3 class="category-header">
                                 <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-                            </h2>
+                            </h3>
 
                             <?php if ( has_post_thumbnail() ) : ?>
                                <?php the_post_thumbnail(); ?>
                                 <div class="clear"></div>
                             <?php endif; ?>
-                            <?php the_content(); ?>
+                            <?php the_excerpt(); ?>
                             <?php wp_link_pages(); ?>
-                            <?php get_template_part('template-part', 'postmeta'); ?>
-                            <?php  if ( comments_open() ) : ?>
+                            <?php //get_template_part('template-part', 'postmeta'); ?>
+                            <?php /* if ( comments_open() ) : ?>
                                    <div class="clear"></div>
                                   <p class="text-right">
                                       <a class="btn btn-success" href="<?php the_permalink(); ?>#comments"><?php comments_number(__('Leave a Comment','devdmbootstrap3'), __('One Comment','devdmbootstrap3'), '%' . __(' Comments','devdmbootstrap3') );?> <span class="glyphicon glyphicon-comment"></span></a>
                                   </p>
-                            <?php endif; ?>
+                            <?php endif; */?>
                        </div>
 
                      <?php  endif; ?>

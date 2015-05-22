@@ -1,4 +1,5 @@
 <?php
+/*
 class T5_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 {
     /**
@@ -9,7 +10,7 @@ class T5_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
      * @param  int $depth     Depth of menu item. May be used for padding.
      * @param  array $args    Additional strings.
      * @return void
-     */
+     *//*
     public function start_el( &$output, $item, $depth, $args )
     {
         $output     .= '<li>';
@@ -43,7 +44,7 @@ class T5_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
      *
      * @param string $output Passed by reference. Used to append additional content.
      * @return void
-     */
+     *//*
     public function start_lvl( &$output )
     {
         $output .= '<ul class="sub-menu">';
@@ -54,7 +55,7 @@ class T5_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
      *
      * @param string $output Passed by reference. Used to append additional content.
      * @return void
-     */
+     *//*
     public function end_lvl( &$output )
     {
         $output .= '</ul>';
@@ -65,16 +66,16 @@ class T5_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
      *
      * @param string $output Passed by reference. Used to append additional content.
      * @return void
-     */
+     *//*
     function end_el( &$output )
     {
         $output .= '</li>';
     }
-}
+} */
 ?>
 <?php if ( has_nav_menu( 'assuntos_home' ) ) : ?>
 
-    <div class="">
+    <div id="assuntos-home-menu">
 
 
                 <?php
@@ -94,5 +95,5 @@ class T5_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 <?php endif; ?>
 
 <script>
-    jQuery('#menu-assuntos > li').addClass('col-md-4 col-sm-6');
+    jQuery('#assuntos-home-menu  li').addClass('col-md-4 col-sm-6');
 </script>
