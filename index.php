@@ -11,7 +11,7 @@
     <?php //left sidebar ?>
     <?php get_sidebar( 'left' ); ?>
 
-    <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
+    <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main ">
 
         <?php
 
@@ -37,14 +37,23 @@
                     if ( is_single() ) : ?>
 
                         <div <?php post_class(); ?>>
-                            <?php if ((strcmp(get_post_type(), 'noticias')) || (strcmp(get_post_type(), 'atualizacoes')) ) get_template_part('template-part', 'postmeta'); ?>
+                            <?php
+                            $category = get_the_category();
+                           /* echo $category[0]->cat_name;
+                            echo strcmp($category[0]->cat_name, 'atualizacoes');
+                            echo (strcmp($category[0]->cat_name, 'noticias'));*/s
+                            ?>
+                            <?php if ((strcmp($category[0]->cat_name, 'Atualizações') == 0 )  || (strcmp($category[0]->cat_name, 'Notícias')) ==0 ) {
+                                get_template_part('template-part', 'postmeta');
+
+                            }?>
 
                             <h2 class="page-header"><?php the_title() ;?></h2>
 
-                            <?php if ( has_post_thumbnail() ) : ?>
+                            <?php /*if ( has_post_thumbnail() ) : ?>
                                 <?php the_post_thumbnail(); ?>
                                 <div class="clear"></div>
-                            <?php endif; ?>
+                            <?php endif; */?>
                             <?php the_content(); ?>
                             <?php wp_link_pages(); ?>
                             <?php //get_template_part('template-part', 'postmeta'); ?>

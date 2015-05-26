@@ -36,7 +36,7 @@
                                 'depth' => 2,
                                 'container' => 'div',
                                 'container_class' => 'collapse navbar-collapse navbar-1-collapse ',
-                                'menu_class' => 'visible-xs nav navbar-nav',
+                                'menu_class' => 'visible-xs visible-sm nav navbar-nav',
                                 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
                                 'walker' => new wp_bootstrap_navwalker())
                         );

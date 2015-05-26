@@ -51,7 +51,8 @@
 
 
     <?php get_template_part('template-part', 'navassuntos'); ?>
-
+    <?php /** CONTEUDO ESTATIO */
+    /*
     <!--<div class="col-md-4   text-center">
 
         <ul>
@@ -73,35 +74,40 @@
             <li><a href="#">Linhas de Pesquisa</a></li>
             <li><a href="#">Linhas de Pesquisa</a></li>
         </ul>
-    </div>-->
+    </div>--> */?>
 </div>
 
-<div id="promo-livro">
-    <div class="container">
-        <div class="col-sm-5 col-sm-offset-1">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/foto-livro.png"
-                 class="img-responsive center-block "/>
-        </div>
 
-        <div class="col-sm-5 ">
-            <h3>
-                Coleção São José dos Campos
-                História e Cidade
-            </h3>
+<?php
+$query = new WP_Query(array('category_name' => 'destaque', 'posts_per_page' => 1));
+$i = 0;
+while ($query->have_posts()) :
+    $query->the_post(); ?>
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id pretium nibh. Sed eget nulla
-                venenatis, viverra augue a, volutpat justo. Phasellus feugiat dictum nibh in iaculis.
-            </p>
+    <div id="promo-livro">
+        <div class="container">
+            <div class="col-sm-5 col-sm-offset-1">
+                <?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
+            </div>
 
+            <div class="col-sm-5 ">
+                <h3>
+                    <?php the_title(); ?> <!--<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>-->
+                </h3>
 
-            <button type="button" class="btn btn-success btn-lg">
-                Saiba mais
-            </button>
+                <p>
+                    <?php the_excerpt(); ?>
+                </p>
+
+                <a href="<?php the_permalink(); ?>" class="btn btn-success btn-lg" role="button">Saiba mais</a>
+                <!--<button type="button" class="btn btn-success btn-lg">
+                    Saiba mais
+                </button>-->
+            </div>
         </div>
     </div>
-</div>
 
+<?php endwhile; ?>
 
 
 <div class="clear"></div>
@@ -131,7 +137,7 @@
         <h2>Atualizações</h2>
 
         <?php
-        $query = new WP_Query(array('category_name' => 'atualizacoes', 'posts_per_page' =>2));
+        $query = new WP_Query(array('category_name' => 'atualizacoes', 'posts_per_page' => 2));
         $i = 0;
         while ($query->have_posts()) :
             $query->the_post(); ?>
@@ -145,5 +151,5 @@
     </div>
 </div>
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
 
